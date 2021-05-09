@@ -10,19 +10,19 @@ info:
     url: "https://www.ethoca.com/terms-of-use"
   version: 1.0.0
 servers:
-  - url: "http://localhost:8080"
+  - url: "http://localhost:8080/api"
     description: localhost endpoint
 tags:
   - name: Merchant Self Serve
     description: Merchant Self Serve
 paths:
-  /api/mss-submerchants:
+  /mss-submerchants:
     post:
       tags:
         - Merchant Self Serve
       summary: Merchant Self-Serve sub-merchant endpoint
       description: Merchant Self-Serve endpoint used to query sub-merchant resources
-      operationId: getMssSubMerchants
+      operationId: addSubMerchants
       requestBody:
         content:
           application/json:

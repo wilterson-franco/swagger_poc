@@ -5,6 +5,7 @@ import org.openapitools.client.model.MssResponse;
 import org.openapitools.client.model.MssSubMerchant;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClarityMerchantServiceController {
 
     @PostMapping("/cms-submerchants")
-    public ResponseEntity<MssResponse> getCmsSubMerchants(MssSubMerchant mssSubMerchant) {
+    public ResponseEntity<MssResponse> createSubMerchant(@RequestBody MssSubMerchant mssSubMerchant) {
 
         CmsSubMerchant cmsSubMerchant = from(mssSubMerchant);
 

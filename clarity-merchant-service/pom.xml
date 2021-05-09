@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ethoca</groupId>
-    <artifactId>ClarityMerchantService</artifactId>
+    <artifactId>clarity-merchant-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ClarityMerchantService</name>
+    <name>clarity-merchant-service</name>
     <description>Clarity Merchant Service</description>
     <properties>
         <java.version>1.8</java.version>

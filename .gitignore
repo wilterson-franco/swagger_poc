@@ -1,0 +1,68 @@
+HELP.md
+**/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### Eclipse STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Other Editors ###
+.c9/
+.launch
+*.sublime-workspace
+
+### IDE - VSCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### compiled output ###
+**/dist
+**/tmp
+**/out-tsc
+# Only exists if Bazel was run
+**/bazel-out
+
+### dependencies ###
+**/node_modules
+
+### profiling files ###
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+### e2e ###
+**/e2e/*.js
+**/e2e/*.map
+
+### System Files ###
+.DS_Store
+Thumbs.db
+
+### H2 DB ###
+*.mv.db
+*.trace.db
+
+### Misc ###
+#/notes
+/.sass-cache
+**/connect.lock
+**/coverage
+**/libpeerconnection.log
+npm-debug.log
+testem.log
+**/typings

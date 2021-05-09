@@ -2,7 +2,7 @@ package com.ethoca;
 
 import okhttp3.OkHttpClient;
 import org.openapitools.client.ApiClient;
-import org.openapitools.client.api.CmsSwaggerPoCApi;
+import org.openapitools.client.api.ClarityMerchantServiceApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,17 +10,17 @@ import org.springframework.context.annotation.Configuration;
 public class Config {
 
     @Bean
-    public CmsSwaggerPoCApi cmsSwaggerPoCApi() {
+    public ClarityMerchantServiceApi clarityMerchantServiceApi() {
         ApiClient apiClient = new ApiClient();
-        apiClient.setBasePath("http://localhost:8080");
+        apiClient.setBasePath("http://localhost:8080/api");
         apiClient.setDebugging(false);
-        apiClient.setReadTimeout(5000);
+        apiClient.setReadTimeout(50000);
 
         OkHttpClient.Builder okHttpClientBuilder = apiClient.getHttpClient().newBuilder();
 
         apiClient = apiClient.setHttpClient(okHttpClientBuilder.build());
 
-        return new CmsSwaggerPoCApi(apiClient);
+        return new ClarityMerchantServiceApi(apiClient);
     }
 
 }
