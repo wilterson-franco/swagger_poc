@@ -1,0 +1,63 @@
+openapi: 3.0.3
+info:
+  title: Clarity Merchant Service
+  description: >-
+    Contract between Merchant Self-Serv and Clarity Merchant Service. They both use the same yml file to talk to each other.
+  contact:
+    email: productintegration@ethoca.com
+  license:
+    name: Copyright (c) 2021 Ethoca Limited. All Rights Reserved.
+    url: "https://www.ethoca.com/terms-of-use"
+  version: 1.0.0
+servers:
+  - url: "http://localhost:8080"
+    description: localhost endpoint
+tags:
+  - name: Clarity Merchant Service
+    description: Clarity Merchant Service
+paths:
+  /api/mss-submerchants:
+    post:
+      tags:
+        - Clarity Merchant Service
+      summary: Merchant Self-Serve sub-merchant endpoint
+      description: Merchant Self-Serve endpoint used to query sub-merchant resources
+      operationId: getMssSubMerchants
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MssSubMerchant"
+        required: true
+      responses:
+        "200":
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MssResponse"
+components:
+  schemas:
+    MssSubMerchant:
+      allOf:
+        - $ref: '../../../../merchant-self-serve/src/main/resources/gateway-submerchant-spec.yml#/components/schemas/GatewaySubMerchant'
+        - type: object
+          properties:
+            salesForceAccountNumber:
+              type: string
+              minLength: 1
+              maxLength: 50
+              description: >-
+                SalesForce account number
+              example: "ABC123456"
+    MssResponse:
+      title: ResponseBody
+      type: object
+      properties:
+        status:
+          type: string
+          minLength: 1
+          maxLength: 100
+          description: >-
+            Sub-merchant status. Can be either ACTIVE or INACTIVE
+          example: "ABC123456"

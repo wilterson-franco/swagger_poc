@@ -1,0 +1,76 @@
+openapi: 3.0.3
+info:
+  title: Merchant Self Serve
+  description: >-
+    The Consumer Clarity Merchant API provides endpoints for merchants and issuers with Order details and helps merchants and issuers reduce disputes and friendly fraud.
+  contact:
+    email: productintegration@ethoca.com
+  license:
+    name: Copyright (c) 2021 Ethoca Limited. All Rights Reserved.
+    url: "https://www.ethoca.com/terms-of-use"
+  version: 1.0.0
+servers:
+  - url: "http://localhost:8080"
+    description: localhost endpoint
+tags:
+  - name: Merchant Self Serve
+    description: Merchant Self Serve
+paths:
+  /api/mss-submerchants:
+    post:
+      tags:
+        - Merchant Self Serve
+      summary: Merchant Self-Serve sub-merchant endpoint
+      description: Merchant Self-Serve endpoint used to query sub-merchant resources
+      operationId: getMssSubMerchants
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GatewaySubMerchant"
+        required: true
+      responses:
+        "200":
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GatewayResponse"
+components:
+  schemas:
+    GatewaySubMerchant:
+      title: RequestBody
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 200
+          description: >-
+            Sub-merchant name
+          example: "Microsoft XBox"
+        subMerchantId:
+          type: string
+          minLength: 1
+          maxLength: 100
+          description: >-
+            Sub-merchant identification
+          example: "ABC123456"
+    GatewayResponse:
+      title: ResponseBody
+      type: object
+      properties:
+        salesForceAccountNumber:
+          type: string
+          minLength: 1
+          maxLength: 50
+          description: >-
+            SalesForce account number
+          example: "WXYZ9876"
+        subMerchantStatus:
+          type: string
+          minLength: 1
+          maxLength: 100
+          description: >-
+            Sub-merchant status. Can be either ACTIVE or INACTIVE
+          example: "ABC123456"
