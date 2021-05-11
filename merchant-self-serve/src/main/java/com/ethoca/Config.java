@@ -1,8 +1,8 @@
 package com.ethoca;
 
+import com.merchant_self_serve.client.ApiClient;
+import com.merchant_self_serve.client.api.ClarityMerchantServiceApi;
 import okhttp3.OkHttpClient;
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.api.ClarityMerchantServiceApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

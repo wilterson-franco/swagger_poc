@@ -1,14 +1,16 @@
 package com.ethoca;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.GatewayResponse;
-import org.openapitools.client.model.GatewaySubMerchant;
-import org.openapitools.client.model.MssSubMerchant;
+import com.merchant_self_serve.client.ApiException;
+import com.merchant_self_serve.client.model.MssSubMerchant;
+import com.merchant_self_serve.server.model.GatewayResponse;
+import com.merchant_self_serve.server.model.GatewaySubMerchant;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
@@ -23,7 +25,7 @@ public class MerchantSelfServeController {
     }
 
     @PostMapping("/mss-submerchants")
-    public ResponseEntity<GatewayResponse> addSubMerchants(@RequestBody GatewaySubMerchant gatewaySubMerchant) {
+    public ResponseEntity<GatewayResponse> addSubMerchants(@Valid @RequestBody GatewaySubMerchant gatewaySubMerchant) {
 
         MssSubMerchant mssSubMerchant = new MssSubMerchant();
         mssSubMerchant.setName(gatewaySubMerchant.getName());

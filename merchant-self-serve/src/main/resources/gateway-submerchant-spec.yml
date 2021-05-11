@@ -24,11 +24,11 @@ paths:
       description: Merchant Self-Serve endpoint used to query sub-merchant resources
       operationId: addSubMerchants
       requestBody:
+        required: true
         content:
           application/json:
             schema:
               $ref: "#/components/schemas/GatewaySubMerchant"
-        required: true
       responses:
         "200":
           description: Successful Operation
@@ -40,6 +40,10 @@ components:
   schemas:
     GatewaySubMerchant:
       title: RequestBody
+      required:
+        - name
+        - subMerchantId
+        - newProp
       type: object
       properties:
         name:
@@ -56,6 +60,13 @@ components:
           description: >-
             Sub-merchant identification
           example: "ABC123456"
+        newProp:
+          type: string
+          minLength: 1
+          maxLength: 50
+          description: >-
+            New property relevant only to ItemBase.
+          example: "new prop"
     GatewayResponse:
       title: ResponseBody
       type: object

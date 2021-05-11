@@ -24,11 +24,11 @@ paths:
       description: Merchant Self-Serve endpoint used to query sub-merchant resources
       operationId: createSubMerchant
       requestBody:
+        required: true
         content:
           application/json:
             schema:
               $ref: "#/components/schemas/MssSubMerchant"
-        required: true
       responses:
         "200":
           description: Successful Operation
@@ -39,6 +39,10 @@ paths:
 components:
   schemas:
     MssSubMerchant:
+#      discriminator:
+#        propertyName: newProp
+      required:
+        - salesForceAccountNumber
       allOf:
         - $ref: '../../../../merchant-self-serve/src/main/resources/gateway-submerchant-spec.yml#/components/schemas/GatewaySubMerchant'
         - type: object
@@ -50,6 +54,13 @@ components:
               description: >-
                 SalesForce account number
               example: "ABC123456"
+            newProp:
+              type: string
+              minLength: 1
+              maxLength: 50
+              description: >-
+                New property relevant only to ItemBase. It's been overridden it's not mandatory
+              example: "new prop"
     MssResponse:
       title: ResponseBody
       type: object

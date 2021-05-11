@@ -1,10 +1,10 @@
 package com.ethoca;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.api.ClarityMerchantServiceApi;
-import org.openapitools.client.model.GatewayResponse;
-import org.openapitools.client.model.MssResponse;
-import org.openapitools.client.model.MssSubMerchant;
+import com.merchant_self_serve.client.ApiException;
+import com.merchant_self_serve.client.api.ClarityMerchantServiceApi;
+import com.merchant_self_serve.client.model.MssResponse;
+import com.merchant_self_serve.client.model.MssSubMerchant;
+import com.merchant_self_serve.server.model.GatewayResponse;
 import org.springframework.stereotype.Service;
 
 @Service
