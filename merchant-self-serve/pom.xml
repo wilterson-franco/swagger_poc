@@ -100,8 +100,7 @@
                         </goals>
                         <configuration>
                             <auth>Authorization: token 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</auth>
-                            <inputSpec>https://raw.githubusercontent.com/wilterson-franco/swagger_poc/main/merchant-self-serve/src/main/resources/gateway-submerchant-spec.yml</inputSpec>
-<!--                            <inputSpec>${project.basedir}/src/main/resources/gateway-submerchant-spec.yml</inputSpec>-->
+                            <inputSpec>https://raw.githubusercontent.com/wilterson-franco/swagger_poc/main/merchant-self-serve-spec/src/main/resources/gateway-submerchant-spec.yml</inputSpec>
                             <generatorName>spring</generatorName>
                             <apiPackage>com.merchant-self-serve.server.api</apiPackage>
                             <modelPackage>com.merchant-self-serve.server.model</modelPackage>
