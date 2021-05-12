@@ -39,12 +39,10 @@ paths:
 components:
   schemas:
     MssSubMerchant:
-#      discriminator:
-#        propertyName: newProp
       required:
         - salesForceAccountNumber
       allOf:
-        - $ref: '../../../../merchant-self-serve/src/main/resources/gateway-submerchant-spec.yml#/components/schemas/GatewaySubMerchant'
+        - $ref: '../../../../merchant-self-serve-spec/src/main/resources/gateway-submerchant-spec.yml#/components/schemas/GatewaySubMerchant'
         - type: object
           properties:
             salesForceAccountNumber:
