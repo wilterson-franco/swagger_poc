@@ -1,8 +1,8 @@
 package com.ethoca;
 
-import org.openapitools.client.model.CmsSubMerchant;
-import org.openapitools.client.model.MssResponse;
-import org.openapitools.client.model.MssSubMerchant;
+import com.clarity_merchant_service.client.model.CmsSubMerchant;
+import com.clarity_merchant_service.server.model.MssResponse;
+import com.clarity_merchant_service.server.model.MssSubMerchant;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

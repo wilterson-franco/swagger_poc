@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: Merchant Self Serve
+  title: Eliminator Domain
   description: >-
-    The Consumer Clarity Merchant API provides endpoints for merchants and issuers with Order details and helps merchants and issuers reduce disputes and friendly fraud.
+    Eliminator domain specification. Used to save sub-merchants in Eliminator DB.
   contact:
     email: productintegration@ethoca.com
   license:
@@ -10,40 +10,36 @@ info:
     url: "https://www.ethoca.com/terms-of-use"
   version: 1.0.0
 servers:
-  - url: "http://localhost:8080/api"
+  - url: "http://localhost:8080"
     description: localhost endpoint
 tags:
-  - name: Merchant Self Serve
-    description: Merchant Self Serve
+  - name: Eliminator Domain
+    description: Eliminator Domain
 paths:
-  /mss-submerchants:
+  /api/cms-submerchants:
     post:
       tags:
-        - Merchant Self Serve
-      summary: Merchant Self-Serve sub-merchant endpoint
-      description: Merchant Self-Serve endpoint used to query sub-merchant resources
-      operationId: addSubMerchants
+        - Eliminator Domain
+      summary: Clarity Merchant Service sub-merchant endpoint
+      description: Clarity Merchant Service endpoint used to query sub-merchant resources
+      operationId: getCmsSubMerchants
       requestBody:
-        required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/GatewaySubMerchant"
+              $ref: "#/components/schemas/CmsSubMerchant"
+        required: true
       responses:
         "200":
           description: Successful Operation
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/GatewayResponse"
+                $ref: "#/components/schemas/CmsResponse"
 components:
   schemas:
-    GatewaySubMerchant:
+    CmsSubMerchant:
       title: RequestBody
-      required:
-        - name
-        - subMerchantId
-        - newProp
       type: object
       properties:
         name:
@@ -60,14 +56,26 @@ components:
           description: >-
             Sub-merchant identification
           example: "ABC123456"
-        newProp:
+        salesForceAccountNumber:
           type: string
           minLength: 1
           maxLength: 50
           description: >-
-            New property relevant only to ItemBase.
-          example: "new prop"
-    GatewayResponse:
+            SalesForce account number
+          example: "ABC123456"
+        status:
+          type: string
+          description: >-
+            Sub-merchant status. Either ACTIVE or INACTIVE
+          example: "ACTIVE"
+        merchantType:
+          type: string
+          minLength: 1
+          maxLength: 50
+          description: >-
+            Entity type. Either GATEWAY, DIRECT, or SUB_MERCHANT
+          example: "SUB_MERCHANT"
+    CmsResponse:
       title: ResponseBody
       type: object
       properties:
