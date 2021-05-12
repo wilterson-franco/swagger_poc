@@ -99,11 +99,15 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/src/main/resources/gateway-submerchant-spec.yml</inputSpec>
+                            <auth>Authorization: token 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</auth>
+                            <inputSpec>https://raw.githubusercontent.com/wilterson-franco/swagger_poc/main/merchant-self-serve/src/main/resources/gateway-submerchant-spec.yml</inputSpec>
+<!--                            <inputSpec>${project.basedir}/src/main/resources/gateway-submerchant-spec.yml</inputSpec>-->
                             <generatorName>spring</generatorName>
                             <apiPackage>com.merchant-self-serve.server.api</apiPackage>
                             <modelPackage>com.merchant-self-serve.server.model</modelPackage>
                             <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
+                            <generateModelDocumentation>false</generateModelDocumentation>
+                            <generateApiDocumentation>false</generateApiDocumentation>
                             <configOptions>
                                 <sourceFolder>src/main/java</sourceFolder>
                                 <dateLibrary>java8</dateLibrary>
@@ -123,6 +127,8 @@
                             <library>okhttp-gson</library>
                             <generateApiTests>false</generateApiTests>
                             <generateModelTests>false</generateModelTests>
+                            <generateModelDocumentation>false</generateModelDocumentation>
+                            <generateApiDocumentation>false</generateApiDocumentation>
                             <configOptions>
                                 <sourceFolder>src/main/java</sourceFolder>
                                 <dateLibrary>java8</dateLibrary>
