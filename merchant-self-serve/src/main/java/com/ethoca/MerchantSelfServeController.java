@@ -30,6 +30,7 @@ public class MerchantSelfServeController {
         MssSubMerchant mssSubMerchant = new MssSubMerchant();
         mssSubMerchant.setName(gatewaySubMerchant.getName());
         mssSubMerchant.setSubMerchantId(gatewaySubMerchant.getSubMerchantId());
+        mssSubMerchant.setNewProp(gatewaySubMerchant.getNewProp());
 
         // Get account number from SalesForce and set it here
         // in order to send it to Clarity Merchant Service
