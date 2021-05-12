@@ -99,7 +99,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <auth>Authorization: token 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</auth>
+                            <auth>Authorization: token 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</auth>
                             <inputSpec>https://raw.githubusercontent.com/wilterson-franco/swagger_poc/main/clarity-merchant-service-spec/src/main/resources/eliminator-domain-spec.yml</inputSpec>
                             <generatorName>java</generatorName>
                             <apiPackage>com.clarity-merchant-service.client.api</apiPackage>
