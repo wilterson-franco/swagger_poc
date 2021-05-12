@@ -1,4 +1,4 @@
-package com.ethoca;
+package com.merchant_self_serve.service;
 
 import org.springframework.stereotype.Service;
 

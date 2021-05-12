@@ -102,8 +102,8 @@
                             <auth>Authorization: token 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</auth>
                             <inputSpec>https://raw.githubusercontent.com/wilterson-franco/swagger_poc/main/clarity-merchant-service-spec/src/main/resources/eliminator-domain-spec.yml</inputSpec>
                             <generatorName>java</generatorName>
-                            <apiPackage>com.clarity-merchant-service.client.api</apiPackage>
-                            <modelPackage>com.clarity-merchant-service.client.model</modelPackage>
+                            <apiPackage>com.clarity_merchant.client.api</apiPackage>
+                            <modelPackage>com.clarity_merchant.client.model</modelPackage>
                             <library>okhttp-gson</library>
                             <generateApiTests>false</generateApiTests>
                             <generateModelTests>false</generateModelTests>
@@ -128,13 +128,14 @@
 <!--                            <inputSpec>https://raw.githubusercontent.com/wilterson-franco/swagger_poc/main/clarity-merchant-service-spec/src/main/resources/clarity-merchant-service-spec.yml</inputSpec>-->
 
                             <generatorName>spring</generatorName>
-                            <apiPackage>com.clarity-merchant-service.server.api</apiPackage>
-                            <modelPackage>com.clarity-merchant-service.server.model</modelPackage>
+                            <apiPackage>com.clarity_merchant.server.api</apiPackage>
+                            <modelPackage>com.clarity_merchant.server.model</modelPackage>
                             <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
                             <generateModelDocumentation>false</generateModelDocumentation>
                             <generateApiDocumentation>false</generateApiDocumentation>
                             <configOptions>
                                 <sourceFolder>src/main/java</sourceFolder>
+                                <delegatePattern>true</delegatePattern>
                                 <dateLibrary>java8</dateLibrary>
                             </configOptions>
                         </configuration>

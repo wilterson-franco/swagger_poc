@@ -1,22 +1,17 @@
-package com.ethoca;
+package com.clarity_merchant.service;
 
-import com.clarity_merchant_service.client.model.CmsSubMerchant;
-import com.clarity_merchant_service.server.model.MssResponse;
-import com.clarity_merchant_service.server.model.MssSubMerchant;
+import com.clarity_merchant.client.model.CmsSubMerchant;
+import com.clarity_merchant.server.api.CmsSubmerchantsApiDelegate;
+import com.clarity_merchant.server.model.MssResponse;
+import com.clarity_merchant.server.model.MssSubMerchant;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-import javax.validation.Valid;
+@Service
+public class ClarityMerchantService implements CmsSubmerchantsApiDelegate {
 
-@RestController
-@RequestMapping("/api")
-public class ClarityMerchantServiceController {
-
-    @PostMapping("/cms-submerchants")
-    public ResponseEntity<MssResponse> createSubMerchant(@Valid @RequestBody MssSubMerchant mssSubMerchant) {
+    @Override
+    public ResponseEntity<MssResponse> createSubMerchant(MssSubMerchant mssSubMerchant) {
 
         CmsSubMerchant cmsSubMerchant = from(mssSubMerchant);
 
@@ -49,4 +44,6 @@ public class ClarityMerchantServiceController {
         System.out.println("SF Account Numb: " + cmsSubMerchant.getSalesForceAccountNumber());
         System.out.println("Merchant Type: " + cmsSubMerchant.getMerchantType());
     }
+
 }
+

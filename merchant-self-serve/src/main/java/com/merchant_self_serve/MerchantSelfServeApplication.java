@@ -1,4 +1,4 @@
-package com.ethoca;
+package com.merchant_self_serve;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

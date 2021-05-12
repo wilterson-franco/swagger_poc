@@ -1,31 +1,26 @@
-package com.ethoca;
+package com.merchant_self_serve.service;
 
 import com.merchant_self_serve.client.ApiException;
 import com.merchant_self_serve.client.model.MssSubMerchant;
+import com.merchant_self_serve.server.api.MssSubmerchantsApiDelegate;
 import com.merchant_self_serve.server.model.GatewayResponse;
 import com.merchant_self_serve.server.model.GatewaySubMerchant;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-import javax.validation.Valid;
-
-@RestController
-@RequestMapping("/api")
-public class MerchantSelfServeController {
+@Service
+public class MerchantSelfServeService implements MssSubmerchantsApiDelegate {
 
     private final ClarityMerchantService clarityMerchantService;
     private final SalesForceService salesForceService;
 
-    public MerchantSelfServeController(ClarityMerchantService clarityMerchantService, SalesForceService salesForceService) {
+    public MerchantSelfServeService(ClarityMerchantService clarityMerchantService, SalesForceService salesForceService) {
         this.clarityMerchantService = clarityMerchantService;
         this.salesForceService = salesForceService;
     }
 
-    @PostMapping("/mss-submerchants")
-    public ResponseEntity<GatewayResponse> addSubMerchants(@Valid @RequestBody GatewaySubMerchant gatewaySubMerchant) {
+    @Override
+    public ResponseEntity<GatewayResponse> addSubMerchants(GatewaySubMerchant gatewaySubMerchant) {
 
         MssSubMerchant mssSubMerchant = new MssSubMerchant();
         mssSubMerchant.setName(gatewaySubMerchant.getName());
@@ -48,5 +43,7 @@ public class MerchantSelfServeController {
         }
 
         throw new NullPointerException("Invalid request");
+
     }
+
 }

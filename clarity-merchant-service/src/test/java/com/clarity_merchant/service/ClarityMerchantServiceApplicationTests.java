@@ -1,10 +1,10 @@
-package com.ethoca;
+package com.clarity_merchant.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MerchantSelfServeApplicationTests {
+class ClarityMerchantServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

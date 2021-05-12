@@ -1,4 +1,4 @@
-package com.ethoca;
+package com.merchant_self_serve.config;
 
 import com.merchant_self_serve.client.ApiClient;
 import com.merchant_self_serve.client.api.ClarityMerchantServiceApi;

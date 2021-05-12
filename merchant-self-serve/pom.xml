@@ -102,13 +102,14 @@
                             <auth>Authorization: token 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</auth>
                             <inputSpec>https://raw.githubusercontent.com/wilterson-franco/swagger_poc/main/merchant-self-serve-spec/src/main/resources/gateway-submerchant-spec.yml</inputSpec>
                             <generatorName>spring</generatorName>
-                            <apiPackage>com.merchant-self-serve.server.api</apiPackage>
-                            <modelPackage>com.merchant-self-serve.server.model</modelPackage>
+                            <apiPackage>com.merchant_self_serve.server.api</apiPackage>
+                            <modelPackage>com.merchant_self_serve.server.model</modelPackage>
                             <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
                             <generateModelDocumentation>false</generateModelDocumentation>
                             <generateApiDocumentation>false</generateApiDocumentation>
                             <configOptions>
                                 <sourceFolder>src/main/java</sourceFolder>
+                                <delegatePattern>true</delegatePattern>
                                 <dateLibrary>java8</dateLibrary>
                             </configOptions>
                         </configuration>
@@ -121,8 +122,8 @@
                         <configuration>
                             <inputSpec>../clarity-merchant-service-spec/src/main/resources/clarity-merchant-service-spec.yml</inputSpec>
                             <generatorName>java</generatorName>
-                            <apiPackage>com.merchant-self-serve.client.api</apiPackage>
-                            <modelPackage>com.merchant-self-serve.client.model</modelPackage>
+                            <apiPackage>com.merchant_self_serve.client.api</apiPackage>
+                            <modelPackage>com.merchant_self_serve.client.model</modelPackage>
                             <library>okhttp-gson</library>
                             <generateApiTests>false</generateApiTests>
                             <generateModelTests>false</generateModelTests>
