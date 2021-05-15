@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "bf1a32b3-51b6-4adc-a9b6-d3d42659ae99",
+		"name": "Swagger-PoC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddSubMerchant",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Sub-Merchant A\",\r\n    \"subMerchantId\":\"987654321\",\r\n    \"newProp\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/mss-submerchants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"mss-submerchants"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
